@@ -1,0 +1,16 @@
+# Default owner
+*                       @owner
+
+# Framework internals
+/.claude/agents/        @owner
+/.claude/skills/        @owner
+/.claude/rules/         @owner
+/.claude/hooks/         @owner
+
+# Product & architecture docs
+/docs/product/          @owner
+/docs/architecture/     @owner
+/docs/adr/              @owner
+/docs/api/              @owner
+
+# Replace @owner with real GitHub handles / teams once this is hosted.

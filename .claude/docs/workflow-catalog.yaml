@@ -1,0 +1,100 @@
+# Claude Code Software Studios — Delivery Workflow Catalog
+# The phases a web application moves through and the skills that drive each one.
+# Read by /project-stage-detect, /gate-check, and /help.
+
+version: 1
+
+phases:
+  - id: concept
+    name: Concept
+    goal: A validated product idea with clear pillars and bounded scope.
+    entry: Fresh repository, or an idea with no written concept.
+    skills: [start, brainstorm, define-product]
+    artifacts:
+      - docs/product/product-concept.md
+      - docs/product/product-pillars.md
+    exit_gate: PD-PHASE-GATE
+    exit_criteria:
+      - Product concept doc approved
+      - 3-5 product pillars defined
+      - Explicit non-goals recorded
+
+  - id: feature-design
+    name: Feature Design
+    goal: Every MVP feature specified and mutually consistent.
+    skills: [map-features, write-spec, review-specs, scope-check]
+    artifacts:
+      - docs/product/feature-index.md
+      - docs/specs/*.md
+    exit_gate: TD-PHASE-GATE
+    exit_criteria:
+      - Feature index prioritized (MVP vs later)
+      - One reviewed spec per MVP feature
+      - /review-specs reports no unresolved contradictions
+
+  - id: technical-setup
+    name: Technical Setup
+    goal: Stack chosen, architecture blueprinted, key decisions recorded.
+    skills: [setup-stack, create-architecture, architecture-decision, design-data-model]
+    artifacts:
+      - .claude/docs/technical-preferences.md (configured)
+      - docs/architecture/architecture.md
+      - docs/adr/adr-*.md
+      - docs/architecture/data-model.md
+    exit_gate: TD-PHASE-GATE
+    exit_criteria:
+      - Stack configured and specialists pinned
+      - Master architecture doc complete
+      - All required ADRs recorded
+      - Data model covers MVP features
+
+  - id: pre-production
+    name: Pre-Production
+    goal: Design foundation and a planned, estimated backlog.
+    skills: [setup-design-system, ux-design, create-epics, create-stories, sprint-plan]
+    artifacts:
+      - design/design-system/*
+      - design/ux/*.md
+      - production/epics/*
+      - production/sprints/sprint-01.md
+    exit_gate: DL-GATE
+    exit_criteria:
+      - Design system foundation exists
+      - UX specs for core screens exist
+      - Epics and stories created and estimated
+      - Sprint 1 planned
+
+  - id: build
+    name: Build
+    goal: MVP features implemented, reviewed, and tested.
+    skills: [dev-story, code-review, story-done, qa-plan, test-setup, perf-profile, bug-triage]
+    exit_gate: QA-PHASE-GATE
+    exit_criteria:
+      - All committed stories marked done
+      - Coverage threshold met
+      - No open P0/P1 bugs
+
+  - id: hardening
+    name: Hardening
+    goal: Performance, accessibility, and security within budget.
+    skills: [perf-profile, ux-review, security-audit, qa-plan, bug-triage]
+    exit_gate: QA-PHASE-GATE
+    exit_criteria:
+      - Core Web Vitals budgets met
+      - Accessibility review passed
+      - Security audit clean or risks accepted
+
+  - id: release
+    name: Release
+    goal: Shipped, announced, observable.
+    skills: [release-checklist, changelog, team-release, hotfix]
+    exit_gate: RM-GATE
+    exit_criteria:
+      - Release checklist passed
+      - Changelog published
+      - Monitoring & rollback path verified
+
+recurring:
+  - retrospective   # end of each sprint / milestone
+  - scope-check     # any time scope feels uncertain
+  - gate-check      # every phase transition

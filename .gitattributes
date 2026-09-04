@@ -1,0 +1,13 @@
+# Normalize text; keep shell scripts LF so hooks run under Git Bash on Windows.
+* text=auto eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+
+# Treat these as binary if they ever appear
+*.png binary
+*.jpg binary
+*.webp binary
+*.pdf binary

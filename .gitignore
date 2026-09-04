@@ -1,0 +1,89 @@
+# === IDE and Editor ===
+.vs/
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# === Claude Code Local ===
+.claude/settings.local.json
+CLAUDE.local.md
+production/session-logs/
+production/session-state/active.md
+
+# === Runtime Artifacts (auto-generated, start empty on fresh clone) ===
+docs/consistency-failures.md
+
+# === Node / JS ===
+node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+*.tsbuildinfo
+.eslintcache
+coverage/
+.nyc_output/
+
+# === Build / Framework Output ===
+build/
+dist/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.vercel/
+.netlify/
+.turbo/
+storybook-static/
+playwright-report/
+test-results/
+
+# === Python ===
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === Go ===
+bin/
+*.test
+
+# === Databases (local) ===
+*.sqlite
+*.sqlite3
+*.db
+/data/
+
+# === Secrets and Environment ===
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# === Temporary and Cache ===
+*.tmp
+*.temp
+*.cache
+*.log
+logs/
+
+# === Archives ===
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# === OS Generated ===
+ehthumbs.db
+$RECYCLE.BIN/
+*.lnk
